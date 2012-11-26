@@ -3,18 +3,18 @@ require 'curb'
 
 class BetterIpInfoDB
 
-  base_url = "http://api.ipinfodb.com/v3"
+  BASE_URL = "http://api.ipinfodb.com/v3"
 
   class << self
     attr_accessor :api_key
   end
 
   def self.request_full(ip)
-    self.request(ip, "#{base_url}/ip-city/")
+    self.request(ip, "#{BASE_URL}/ip-city/")
   end
 
   def self.request_country(ip)
-    self.request(ip, "#{base_url}/ip-country/")
+    self.request(ip, "#{BASE_URL}/ip-country/")
   end
 
   def self.request(ip, url)
